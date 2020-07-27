@@ -12,6 +12,7 @@ MSAL is used for authentication to Azure AD. To get running, create a new App Re
   - Single-page application
     - Redirect URIs: `http://localhost:4200`
   - Implicit Grant:
+    - Access Tokens
     - ID tokens
 - Leave the rest of the settings as default
 
