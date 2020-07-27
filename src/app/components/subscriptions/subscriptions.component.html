@@ -1,0 +1,3 @@
+<div *ngFor="let s of subscriptions">
+    <a [routerLink]="[s.subscriptionId]" [queryParams]="{subscriptionName: s.displayName}">{{s.displayName}}</a>
+</div>

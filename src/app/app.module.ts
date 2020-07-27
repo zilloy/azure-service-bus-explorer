@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MsalModule, MsalInterceptor } from '@azure/msal-angular';
 
-import { SubscriptionsComponent } from './components/common/subscriptions/subscriptions.component';
-import { HomeComponent } from './components/home/home.component';
+import { SubscriptionsComponent } from './components/subscriptions/subscriptions.component';
+import { SubscriptionComponent } from './components/subscription/subscription.component';
+import { ServiceBusServicesComponent } from './components/service-bus-services/service-bus-services.component';
+import { ServiceBusServiceComponent } from './components/service-bus-service/service-bus-service.component';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -16,7 +18,9 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
   declarations: [
     AppComponent,
     SubscriptionsComponent,
-    HomeComponent
+    SubscriptionComponent,
+    ServiceBusServicesComponent,
+    ServiceBusServiceComponent
   ],
   imports: [
     BrowserModule,
