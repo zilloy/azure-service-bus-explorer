@@ -1,15 +1,37 @@
-# AzureServiceBusExplorer
+# Azure Service Bus Explorer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
-## Configuration
+## Getting Started
+### Dev Container
+This project contains a dev container which can be used when developing. Read more [here](https://code.visualstudio.com/docs/remote/containers). Usage of this is optional. To use the dev container, open the repo in VS Code and follow the prompt to build and open in the container. The dev container is based on the standard node 14 + typescript image, with the angular CLI installed. 
 
-Create a copy of environment.ts and call it environment.local.ts. 
-Put your own application's clientId from AAD
+### Configuration
+MSAL is used for authentication to Azure AD. To get running, create a new App Registration in AAD, with the following settings:
+- Authentication: 
+  - Single-page application
+    - Redirect URIs: `http://localhost:4200`
+  - Implicit Grant:
+    - ID tokens
+- Leave the rest of the settings as default
 
-## Development server
+Create a copy of `src/environments/environment.ts` and call it `environment.local.ts`. 
+Add the App ID from the app you just created here: 
+```json
+...
+auth: {
+    clientId: 'app-id-here'
+}
+...
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> NOTE: The app will request permissions from AAD the first time it runs, and will require admin consent for some of them. For this reason you will need to be able to act as an AAD administrator.
+
+
+### Run the app in the dev server
+
+- Run `npm install`
+- Run `ng serve` to start the dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
