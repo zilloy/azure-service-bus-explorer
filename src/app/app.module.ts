@@ -9,6 +9,7 @@ import { MsalModule, MsalInterceptor } from '@azure/msal-angular';
 
 import { SubscriptionsComponent } from './components/common/subscriptions/subscriptions.component';
 import { HomeComponent } from './components/home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -44,7 +45,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
           ['management.azure.com', ['https://management.azure.com/user_impersonation']],
         ],
         extraQueryParameters: {}
-      })
+      }),
+    NgbModule
   ],
   providers: [
     {
