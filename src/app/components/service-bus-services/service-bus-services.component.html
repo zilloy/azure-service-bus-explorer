@@ -1,1 +1,4 @@
-<p>service-bus-services works!</p>
+<h5>Namespaces</h5>
+<ul class="list-group" >
+    <a class="list-group-item list-group-item-action" *ngFor="let n of namespaces" [routerLink]="[n.name]" [queryParams]="{namespaceId: n.id}">{{n.name}}</a>
+</ul>

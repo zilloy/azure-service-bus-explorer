@@ -1,3 +1,4 @@
-<div *ngFor="let s of subscriptions">
-    <a [routerLink]="[s.subscriptionId]" [queryParams]="{subscriptionName: s.displayName}">{{s.displayName}}</a>
+<h5>Subscriptions</h5>
+<div class="list-group" >
+    <a class="list-group-item list-group-item-action" *ngFor="let s of subscriptions" [routerLink]="[s.subscriptionId]" [queryParams]="{subscriptionName: s.displayName}">{{s.displayName}}</a>
 </div>
