@@ -18,6 +18,9 @@ const routes: Routes = [
   {
     path:'subscriptions/:subscriptionId',
     component: SubscriptionComponent,
+    canActivate: [
+      MsalGuard
+    ],
     children:[
       { path: '',   redirectTo: 'service-bus-services', pathMatch: 'full' },
       {

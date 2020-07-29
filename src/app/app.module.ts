@@ -11,6 +11,7 @@ import { SubscriptionsComponent } from './components/subscriptions/subscriptions
 import { SubscriptionComponent } from './components/subscription/subscription.component';
 import { ServiceBusServicesComponent } from './components/service-bus-services/service-bus-services.component';
 import { ServiceBusServiceComponent } from './components/service-bus-service/service-bus-service.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -20,7 +21,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     SubscriptionsComponent,
     SubscriptionComponent,
     ServiceBusServicesComponent,
-    ServiceBusServiceComponent
+    ServiceBusServiceComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -40,12 +42,14 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         popUp: false,
         consentScopes: [
           'user.read',
-          'https://management.azure.com/user_impersonation'
+          'https://management.azure.com/user_impersonation',
+          'https://servicebus.azure.net/user_impersonation'
         ],
         unprotectedResources: [],
         protectedResourceMap: [
           ['graph.microsoft.com', ['user.read']],
           ['management.azure.com', ['https://management.azure.com/user_impersonation']],
+          ['servicebus.windows.net', ['https://servicebus.azure.net/user_impersonation']]
         ],
         extraQueryParameters: {}
       })
