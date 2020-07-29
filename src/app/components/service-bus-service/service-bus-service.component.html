@@ -1,10 +1,9 @@
-<h5>{{namespaceName}}</h5>
-<h6>QUEUES</h6>
+<h5>Queues</h5>
 <div class="list-group" >
     <a *ngFor="let q of queues" class="list-group-item list-group-item-action" [routerLink]="[q.name]">{{q.name}}</a>
 </div>
-
-<h6>TOPICS</h6>
+<br/>
+<h5>Topics</h5>
 <div class="list-group" >
     <a *ngFor="let t of topics" class="list-group-item list-group-item-action" [routerLink]="[t.name]">{{t.name}}</a>
 </div>

@@ -19,7 +19,7 @@ export class ServiceBusServiceComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.url.subscribe((urlPath) => {
-      this.namespaceName = urlPath[1].path;
+      this.namespaceName = urlPath[0].path;
       console.log('Namespace:', this.namespaceName);
       this.route.queryParams.subscribe((q) => {
         this.namespaceId = q['namespaceId'];
